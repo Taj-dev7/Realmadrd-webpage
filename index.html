@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="realmadridlogo.png" alt="Real Madrid Logo">
+            <h1>Real Madrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Players</a></li>
+                <li><a href="#">Stadiums</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="players">
+        <h2>Best Players</h2>
+        <div class="player-cards">
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <!-- Front Side -->
+                    <div class="card-front">
+                        <img src="cristianoronaldo.png" alt="Cristiano Ronaldo">
+                        <h3>Cristiano Ronaldo (Goat)</h3>
+                        <p>Rating: 99</p>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="card-back">
+                        <h3>About Player</h3>
+                        <p>El Bicho,CR7,He is the GREATEST OF ALL TIME,BEST LW,ST IN THE WORLD,A Topnotch Player</p>
+                        <p>Goals: 900+</p>
+                        <p>Assists: 300+</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Benzema10.png" alt="Karim Benzema">
+                        <h3>Karim Benzema</h3>
+                        <p>Rating: 98</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>About Player</h3>
+                        <p>KingKarim is a TopClass Finisher</p>
+                        <p>Goals: 400+</p>
+                        <p>Assists: 160+</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="toni kroos.png" alt="Toni Kroos">
+                        <h3>Toni Kroos</h3>
+                        <p>Rating: 96</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>About Player</h3>
+                        <p>The Sniper of Football ,The German Oak is One Of The Best MidFielder in the World </p>
+                        <p>Goals: 180+</p>
+                        <p>Assists: 150+</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="gareth bale.png" alt="Gareth Bale">
+                        <h3>Gareth Bale</h3>
+                        <p>Rating: 98</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>About Player</h3>
+                        <p>The Cannon ,Greatest Welsh players of all time</p>
+                        <p>Goals: 180+</p>
+                        <p>Assists: 130+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div class="stadiums">
+        <h2> Real Madrid Stadiums</h2>
+        <div class="carousel">
+            <button id="prev">Previous</button>
+            <img id="stadiumImage" src="stadiumr.png" alt="Stadium">
+            <button id="next">Next</button>
+        </div>
+        <div id="stadiumName" class="stadium-name">Stadium Name</div> <!-- Display stadium name -->
+    </div>
+    
+        
+    </section>
+    
+
+   
+    <footer>
+        <p>Real Madrid © 2024. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #121212;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  margin-right: 15px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00; /* Real Madrid's yellow color */
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+}
+
+/* Player Cards Section */
+/* Player Section Styling */
+.players {
+  background-color: #0c0239; /* Dark background for player section */
+  color: rgb(233, 214, 3); /* White text color */
+  padding: 20px; /* Padding around the section */
+  text-align: center; /* Center text */
+}
+
+.players h2 {
+  font-size: 2.5rem; /* Heading font size */
+  margin-bottom: 20px; /* Margin below the heading */
+  text-transform: uppercase; /* Uppercase for the heading */
+  letter-spacing: 2px; /* Letter spacing */
+}
+
+/* Player Cards Container */
+.player-cards {
+  display: flex; /* Flexbox for card layout */
+  justify-content: center; /* Center cards horizontally */
+  flex-wrap: wrap; /* Allow cards to wrap */
+  gap: 20px; /* Space between cards */
+}
+
+/* Card Container */
+.card {
+  width: 220px; /* Set width of the card */
+  height: 300px; /* Set height of the card */
+  perspective: 1000px; /* Perspective for 3D effect */
+}
+
+/* Inner Card that flips */
+.card-inner {
+  position: relative; /* Positioning for inner card */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  transition: transform 0.8s ease-in-out; /* Transition for flipping */
+  transform-style: preserve-3d; /* Preserve 3D transforms */
+}
+
+/* Front and Back faces of the card */
+.card-front, .card-back {
+  position: absolute; /* Absolute positioning for front and back */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  backface-visibility: hidden; /* Hide back face until flipped */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Box shadow for depth */
+  display: flex; /* Flexbox for content alignment */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Front of the Card */
+.card-front {
+  background-color: #282828; /* Background color for front */
+  overflow: hidden; /* Prevent overflow of content */
+  padding: 10px; /* Padding around content */
+}
+
+/* Card Front Image */
+.card-front img {
+  width: 100%; /* Fill the width of the card */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 180px; /* Limit the max height to avoid cropping */
+  border-radius: 10px; /* Rounded corners for image */
+}
+
+/* Card Front Title */
+.card-front h3 {
+  font-size: 1.5rem; /* Adjust font size */
+  margin: 5px 0; /* Margin for spacing */
+  color: #f2f2f2; /* Text color */
+  text-align: center; /* Center align text */
+}
+
+/* Card Front Rating */
+.card-front p {
+  font-size: 1.2rem; /* Adjust font size for rating */
+  color: #f2f2f2; /* Text color */
+  text-align: center; /* Center align text */
+}
+
+/* Back of the Card */
+.card-back {
+  background-color: #444; /* Background color for back */
+  color: white; /* Text color */
+  display: flex; /* Flexbox for content alignment */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 20px; /* Padding around stats */
+  transform: rotateY(180deg); /* Initially flipped */
+}
+
+/* Card flip effect */
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flip the card */
+}
+
+/* Backface visibility ensures the cards flip cleanly without overlap */
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Styling for the stats on the back */
+.card-back h3 {
+  font-size: 1.5rem; /* Size for the stats title */
+  margin-bottom: 10px; /* Margin for spacing */
+}
+
+.card-back p {
+  font-size: 1rem; /* Size for the individual stats */
+}
+
+
+
+
+/* Stadiums Section */
+.stadiums {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.stadiums h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 30px;
+}
+
+/* Zoom-in animation on load or scroll */
+.stadium-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  opacity: 0; /* Initially hidden for scroll-triggered animation */
+  animation: zoomIn 2s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8); /* Start smaller */
+  }
+  to {
+      opacity: 1;
+      transform: scale(1); /* End at normal size */
+  }
+}
+
+.stadium-gallery figure {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+.stadium-gallery img {
+  width: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom effect on hover */
+.stadium-gallery img:hover {
+  transform: scale(1.05); /* Zoom in slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.stadium-gallery figcaption {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.carousel img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+button {
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e6b800;
+}
+
+/* Styling for the stadium name */
+.stadium-name {
+  font-size: 1.5rem; /* Adjust font size */
+  color: #ffffff; /* Text color */
+  text-align: center; /* Center align the text */
+  margin-top: 10px; /* Space between the image and the name */
+  opacity: 0; /* Start invisible for animation */
+  transform: translateY(-20px); /* Initial position for animation */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for animation */
+}
+
+
+footer {
+  background-color: #121212;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+
+
